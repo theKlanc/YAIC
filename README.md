@@ -19,12 +19,12 @@ using namespace std::placeholders;
 class myCustomConsole : public console<customType>{
 	public:
 		myCustomConsole(bool redir = false): console(redir){
-      BIND(customCommand1);
-    }
+			BIND(customCommand1);
+    		}
 	private:
 		void customCommand1(std::stringstream args, customType data){
-      doWhatev(data.someVar);
-    }
+			doWhatev(data.someVar);
+		}
 };
 ```
 Then just initialize an object myCustomConsole wherever you want, and call its myCustomConsoleObject.show(data) method inside an ImGui context.
