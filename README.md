@@ -1,6 +1,7 @@
 # YAIC
 Yet Another Imgui Console
-Header only C++ Imgui console, with support for stdout redirection unto itself.
+
+Header only C++ Imgui console, with support for stdout redirection into itself.
 
 ## Usage
 myCustomConsole.hpp
