@@ -45,11 +45,11 @@ class console{
 				_terminalBuffer = _terminalBuffer.substr(todel,_terminalBuffer.size()-todel);
 			}
 			ImGui::Begin("Debug terminal", nullptr, 0);
-			ImGui::Text(_terminalBuffer.c_str());
-			bool pressedEnter = ImGui::InputText("", &_textEntryBuffer.front(), _textEntryBuffer.size()-1, ImGuiInputTextFlags_EnterReturnsTrue);
+			ImGui::TextUnformatted(_terminalBuffer.c_str());
+			bool pressedEnter = ImGui::InputText("##command", &_textEntryBuffer.front(), _textEntryBuffer.size()-1, ImGuiInputTextFlags_EnterReturnsTrue);
 			if(scrollToBottom){
 				ImGui::SetKeyboardFocusHere(-1);
-				ImGui::SetScrollHere();
+				ImGui::SetScrollHereY(1.0f);
 				scrollToBottom = false;
 			}
 			if(pressedEnter){
